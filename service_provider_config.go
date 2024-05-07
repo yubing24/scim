@@ -53,6 +53,8 @@ type ServiceProviderConfig struct {
 	SupportPatch bool
 	// SupportBulk whether your SCIM implementation will support bulk operations
 	SupportBulk bool
+	// SupportEtag whether your SCIM implementation will support etag in response header
+	SupportEtag bool
 }
 
 // getItemsPerPage retrieves the configured default count. It falls back to 100 when not configured.
@@ -86,7 +88,7 @@ func (config ServiceProviderConfig) getRaw() map[string]interface{} {
 			"supported": false,
 		},
 		"etag": map[string]bool{
-			"supported": false,
+			"supported": config.SupportEtag,
 		},
 		"authenticationSchemes": config.getRawAuthenticationSchemes(),
 	}
