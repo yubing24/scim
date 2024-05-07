@@ -71,7 +71,7 @@ func (config ServiceProviderConfig) getRaw() map[string]interface{} {
 			"supported": config.SupportPatch,
 		},
 		"bulk": map[string]interface{}{
-			"supported":      false,
+			"supported":      config.SupportBulk,
 			"maxOperations":  1000,
 			"maxPayloadSize": 1048576,
 		},
