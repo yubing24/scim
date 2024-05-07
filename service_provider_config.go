@@ -51,6 +51,8 @@ type ServiceProviderConfig struct {
 	SupportFiltering bool
 	// SupportPatch whether your SCIM implementation will support patch requests.
 	SupportPatch bool
+	// SupportBulk whether your SCIM implementation will support bulk operations
+	SupportBulk bool
 }
 
 // getItemsPerPage retrieves the configured default count. It falls back to 100 when not configured.
